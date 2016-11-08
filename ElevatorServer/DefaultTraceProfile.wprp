@@ -110,6 +110,11 @@
         <Keyword Value="SplitIO"/>        
       </Keywords>
     </SystemProvider>
+    <SystemProvider Id="SystemProvider_EnergyMetrics">
+      <Keywords>
+        <Keyword Value="ProcessThread"/>
+      </Keywords>
+    </SystemProvider>
     <SystemProvider Id="SystemProvider_NetworkUsageMetrics">
       <Keywords>
         <Keyword Value="CSwitch"/>
@@ -266,6 +271,9 @@
 	</Profile>
     <Profile Id="energy.Verbose.File" Name="energy" Description="Energy Profile" LoggingMode="File" DetailLevel="Verbose">
       <Collectors>
+        <SystemCollectorId Value="SystemCollector_EnergyMetrics" >
+          <SystemProviderId Value="SystemProvider_EnergyMetrics" />
+        </SystemCollectorId>
         <EventCollectorId Value="EventCollector_EnergyMetrics">
           <EventProviders>
             <EventProviderId Value="EventProvider_Microsoft-Windows-Energy-Estimation-Engine" />
