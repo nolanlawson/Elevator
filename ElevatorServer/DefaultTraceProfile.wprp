@@ -410,7 +410,7 @@
       </Collectors>
     </Profile>
     <Profile Id="refSet.Verbose.Memory" Name="refSet" Description="Reference Set Profile" Base="refSet.Verbose.File" LoggingMode="Memory" DetailLevel="Verbose" />
-    <Profile Id="debug.Verbose.File" Name="debug" Description="debug Profile" LoggingMode="File" DetailLevel="Verbose">
+    <Profile Id="edgeDebug.Verbose.File" Name="edgeDebug" Description="edgeDebug Profile" LoggingMode="File" DetailLevel="Verbose">
       <Collectors>
         <SystemCollectorId Value="SystemCollector_Debug" >
           <SystemProviderId Value="SystemProvider_Debug" />
@@ -420,7 +420,6 @@
             <EventProviderId Value="EventProvider_DWMWin32k" />
             <EventProviderId Value="EventProvider_IE" />
             <EventProviderId Value="EventProvider_IEFrame" />
-            <EventProviderId Value="EventProvider_Microsoft-JScript" />
             <EventProviderId Value="EventProvider_Microsoft-Web-Platform" />
             <EventProviderId Value="EventProvider_Microsoft-Windows-App-Browser" />
             <EventProviderId Value="EventProvider_Microsoft-Windows-Energy-Estimation-Engine" />
@@ -441,7 +440,7 @@
         </EventCollectorId>
       </Collectors>
     </Profile>
-    <Profile Id="debug.Verbose.Memory" Name="debug" Description="debug Profile" Base="debug.Verbose.File" LoggingMode="Memory" DetailLevel="Verbose" />
+    <Profile Id="edgeDebug.Verbose.Memory" Name="edgeDebug" Description="edgeDebug Profile" Base="edgeDebug.Verbose.File" LoggingMode="Memory" DetailLevel="Verbose" />
   </Profiles>
 
   <!-- TraceMerge Properties -->	  
