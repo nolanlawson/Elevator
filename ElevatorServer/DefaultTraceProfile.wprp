@@ -93,6 +93,9 @@
         <Keyword Value="ProcessThread"/>
         <Keyword Value="SampledProfile"/>
       </Keywords>
+      <Stacks Operation="Add">
+        <Stack Value="SampledProfile"/>
+      </Stacks>
     </SystemProvider>
     <SystemProvider Id="SystemProvider_DiskUsageMetrics">
       <Keywords>
@@ -208,7 +211,39 @@
       <Keywords>
         <Keyword Value="0x2000"/>
       </Keywords>
-    </EventProvider>    
+    </EventProvider>
+    <EventProvider Id="EventProvider_IE" Name="9e3b3947-ca5d-4614-91a2-7b624e0e7244">
+      <Keywords>
+        <!-- perf_jscript 0x00000110 -->
+        <!-- perf_ddtrack 0x00804310 -->
+        <!-- animation and composition   0x30000000 -->
+        <Keyword Value="0x30805312"/>
+      </Keywords>
+    </EventProvider>
+    <EventProvider Id="EventProvider_IE_Stacks" Name="9e3b3947-ca5d-4614-91a2-7b624e0e7244" Stack="true">
+      <Keywords>
+        <Keyword Value="0x00000010"/>
+      </Keywords>
+    </EventProvider>
+    <EventProvider Id="EventProvider_Microsoft-JScript" Name="57277741-3638-4A4B-BDBA-0AC6E45DA56C">
+      <Keywords>
+        <!-- perf_jscript 0x00000011 -->
+        <Keyword Value="0x00000011"/>
+      </Keywords>
+    </EventProvider>
+    <EventProvider Id="EventProvider_Microsoft-JScript_Stacks" Name="57277741-3638-4A4B-BDBA-0AC6E45DA56C" Stack="true">
+      <Keywords>
+        <Keyword Value="0x00000010"/>
+      </Keywords>
+    </EventProvider>
+    <EventProvider Id="EventProvider_Microsoft-Windows-COM-Perf" Name="b8d6861b-d20f-4eec-bbae-87e0dd80602b"/>
+    <EventProvider Id="EventProvider_Microsoft-Windows-COM-Perf_Stacks" Name="b8d6861b-d20f-4eec-bbae-87e0dd80602b" Stack="true"/>
+    <EventProvider Id="EventProvider_Microsoft-Windows-AsynchronousCausality" Name="19a4c69a-28eb-4d4b-8d94-5f19055a1b5c"/>
+    <EventProvider Id="EventProvider_Microsoft-Windows-AsynchronousCausality_Stacks" Name="19a4c69a-28eb-4d4b-8d94-5f19055a1b5c" Stack="true">
+      <Keywords>
+        <Keyword Value="0x00000003"/>
+      </Keywords>
+    </EventProvider>
 
 	<!-- Profiles -->	
     <Profile Id="defaultProfile.Verbose.File" Name="defaultProfile" Description="Default tracing profile" LoggingMode="File" DetailLevel="Verbose">
@@ -242,6 +277,16 @@
             <EventProviderId Value="EventProvider_Microsoft-Windows-Win32k"/>
             <EventProviderId Value="EventProvider_Microsoft-Windows-ProcessStateManager" />
             <EventProviderId Value="EventProvider_PerfTrack" />
+            <EventProviderId Value="EventProvider_IE" />
+            <EventProviderId Value="EventProvider_IE_Stacks" />
+            <EventProviderId Value="EventProvider_IE_NotStacks" />
+            <EventProviderId Value="EventProvider_Microsoft-JScript" />
+            <EventProviderId Value="EventProvider_Microsoft-JScript_Stacks" />
+            <EventProviderId Value="EventProvider_Microsoft-JScript_NotStacks" />
+            <EventProviderId Value="EventProvider_Microsoft-Windows-COM-Perf" />
+            <EventProviderId Value="EventProvider_Microsoft-Windows-COM-Perf_Stacks" />
+            <EventProviderId Value="EventProvider_Microsoft-Windows-AsynchronousCausality" />
+            <EventProviderId Value="EventProvider_Microsoft-Windows-AsynchronousCausality_Stacks" />
           </EventProviders>
         </EventCollectorId>
       </Collectors>
