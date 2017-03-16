@@ -90,8 +90,8 @@ namespace Elevator
                 recordingMode = "";
             }
 
-            commandLine = "-start " + _wprpFile + recordingMode;
-
+            commandLine = "-start GeneralProfile -start CPU -start EdgeBrowser -start InternetExplorer -start HTMLActivity -start DesktopComposition -start HTMLResponsiveness -start Network " + recordingMode;
+            Console.WriteLine("cmd: " + commandLine);
             isSuccess = this.RunWpr(commandLine);
 
             return isSuccess;
@@ -119,7 +119,8 @@ namespace Elevator
                 throw new Exception("The WPR profile does not exist in the WPRP file!");
             }
 
-            string commandLine = "-start " + _wprpFile + "!" + wprProfile + recordingMode;
+            string commandLine = "-start GeneralProfile -start CPU -start EdgeBrowser -start InternetExplorer -start HTMLActivity -start DesktopComposition -start HTMLResponsiveness -start Network " + recordingMode;
+            Console.WriteLine("cmd: " + commandLine);
             isSuccess = this.RunWpr(commandLine);
 
             return isSuccess;
